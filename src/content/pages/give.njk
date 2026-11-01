@@ -25,7 +25,7 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
     {% if site.donation_url %}
     <div class="actions actions-tight">
       <a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=give-ask&amp;utm_campaign=the-plan" target="_blank" rel="noopener">
-        Donate now
+        Give now
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -38,7 +38,8 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
     </div>
     <p class="note" style="margin-top:20px;">Online giving is being set up now. Email us in the meantime and we will send you everything you need.</p>
     {% endif %}
-    <p class="note" style="margin-top:24px;">A registered 501(c)(3) nonprofit, EIN {{ site.ein }}. Contributions are tax deductible to the extent allowed by law.</p>
+    <p class="note" style="margin-top:24px;">Oasis Women Center was founded by Keisha Ortiz, our Founder and Board Chair. <a href="/founder/">Read her story.</a></p>
+    <p class="note" style="margin-top:8px;">A registered 501(c)(3) nonprofit, EIN {{ site.ein }}. Contributions are tax deductible to the extent allowed by law.</p>
   </div>
   <div class="col col-photo" data-open>
     <img src="/assets/images/photos/house-exterior-wide.webp" alt="A single-story brick home with a green lawn and a driveway on a sunny day." width="1536" height="1024" loading="lazy" decoding="async" style="--pos:48% 50%">
@@ -146,8 +147,26 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
     <h2 class="stmt" id="questions-h">Questions before <em>you give</em>?</h2>
     <p class="lede-xl">Call {{ site.phone }} or email {{ site.email }}. A real person answers.</p>
     <div class="actions">
-      <a class="btn btn-gold" href="tel:{{ site.phone | replace('-', '') }}">Call {{ site.phone }}</a>
+      <a class="btn btn-glass" href="tel:{{ site.phone | replace('-', '') }}">Call {{ site.phone }}</a>
       <a class="btn btn-glass" href="mailto:{{ site.email }}">Email us</a>
     </div>
   </div>
 </section>
+
+{% if site.donation_url %}
+{# The page ends on the ask. Gold on this page means one thing: Zeffy. #}
+<section class="bd bd-sand cl" aria-labelledby="close-h">
+  <div class="bd-in" data-rv>
+    <p class="eyebrow">Open the door</p>
+    <h2 class="stmt" id="close-h">Help us open <em>the door</em>.</h2>
+    <p class="lede-xl">Every gift made today goes toward the lease or purchase of our first transitional home in Denton County.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=give-close&amp;utm_campaign=the-plan" target="_blank" rel="noopener">
+        Give now
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <p class="note" style="margin-top:26px;">A registered 501(c)(3) nonprofit, EIN {{ site.ein }}. Contributions are tax deductible to the extent allowed by law.</p>
+  </div>
+</section>
+{% endif %}

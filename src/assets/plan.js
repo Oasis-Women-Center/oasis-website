@@ -93,7 +93,9 @@
     // first, last, then coarse-to-fine so a fast scroll still has something to show
     var order = [], seen = {};
     [0, frameCount - 1].forEach(function (i) { order.push(i); seen[i] = 1; });
-    for (var stride = 16; stride >= 1; stride = Math.floor(stride / 2)) {
+    // on a phone every second frame is enough (1.7 MB instead of 3.5): the loader below already draws the nearest frame that has arrived
+    var minStride = window.innerWidth <= 760 ? 2 : 1;
+    for (var stride = 16; stride >= minStride; stride = Math.floor(stride / 2)) {
       for (var i = 0; i < frameCount; i += stride) if (!seen[i]) { order.push(i); seen[i] = 1; }
     }
     var live = false;
@@ -160,8 +162,15 @@
     }
   }
   if (build) {
-    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { if (e[0].isIntersecting) loadFrames(); }, { rootMargin: "150% 0px" }).observe(build);
-    else loadFrames();
+    // On a phone the section sits close to the top, so the frames used to start downloading before the first screen had finished:
+    // 96 requests in a slow-network race with the hero image and fonts, and the page's load event waiting on all of them.
+    // Let the page finish loading first, then fetch.
+    var startFrames = function () {
+      if (window.innerWidth > 760 || document.readyState === "complete") loadFrames();
+      else window.addEventListener("load", function () { setTimeout(loadFrames, 1200); });
+    };
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { if (e[0].isIntersecting) startFrames(); }, { rootMargin: "150% 0px" }).observe(build);
+    else startFrames();
   }
 
   /* ---------- photos: load and decode ahead of the scroll, not as they arrive ---------- */
@@ -249,7 +258,9 @@
     }
 
     if (collapse && !reduce && M.collapse && y > M.collapse.top - M.vh && y < M.collapse.top + M.collapse.h + 40) {
-      var cp = clamp((y - M.collapse.top) / (M.collapse.h - M.vh), 0, 1);
+      // The animation runs over 1.3 screens of scroll. The section is taller than that (see .js .collapse in plan.css), so after
+      // the ask is fully readable the page stays pinned for a further stretch instead of releasing it a hair later.
+      var cp = clamp((y - M.collapse.top) / (1.3 * M.vh), 0, 1);
       var c = 58 * (1 - easeInOut(clamp((cp - 0.08) / 0.72, 0, 1)));
       var co = clamp((cp - 0.62) / 0.25, 0, 1);
       if (Math.abs(c - lastC) > 0.05) {

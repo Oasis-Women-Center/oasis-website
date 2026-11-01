@@ -18,7 +18,7 @@ layout: layouts/plan.njk
     <h1 class="display">{% if hero_accent %}{{ heading | escape | replace(hero_accent, '<em>' + hero_accent + '</em>') | safe }}{% else %}{{ heading }}{% endif %}</h1>
     {% if hero_subtext %}<p class="lede">{{ hero_subtext }}</p>{% endif %}
     {% if hero_note %}<p class="ph-note hand" aria-hidden="true">{{ hero_note }}</p>{% endif %}
-    {% if hero_donate and site.donation_url %}<p class="ph-ctas"><a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium={{ hero_donate }}&amp;utm_campaign=the-plan" target="_blank" rel="noopener">Donate now</a></p>{% endif %}
+    {% if hero_donate and site.donation_url %}<p class="ph-ctas"><a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium={{ hero_donate }}&amp;utm_campaign=the-plan" target="_blank" rel="noopener">Give now</a></p>{% endif %}
   </div>
   <div class="ph-stage">
     <figure class="ph-plate"{% if hero_pos %} style="--pos:{{ hero_pos }}"{% endif %}>

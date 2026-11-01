@@ -17,7 +17,7 @@
 
 backend:
   name: github
-  repo: kag-richards/oasis-website
+  repo: Oasis-Women-Center/oasis-website
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth

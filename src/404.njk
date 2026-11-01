@@ -1,0 +1,36 @@
+---
+title: Page not found
+layout: layouts/page.njk
+permalink: /404.html
+wide: true
+noindex: true
+eleventyExcludeFromCollections: true
+eyebrow: Not found
+hero_heading: This door is not here
+hero_accent: not here
+hero_subtext: The page you were looking for has moved, or it never existed.
+hero_note: the front door is still lit
+hero_image: /assets/images/photos/porch-evening.webp
+hero_w: 1024
+hero_h: 1024
+hero_alt: A front door lit by a porch light at dusk, with wooden steps and a potted plant beside it.
+hero_pos: 50% 38%
+meta_description: This page could not be found. Return to the Oasis Women Center home page.
+---
+
+<section class="bd bd-paper" aria-labelledby="nf-h">
+  <div class="bd-in rl">
+    <div class="rl-head" data-rv>
+      <p class="eyebrow">Where to next</p>
+      <h2 class="title" id="nf-h">Try one of these <em>instead</em>.</h2>
+    </div>
+    <div class="ed" data-rv style="--d:.1s">
+      <p>If you followed a link that used to work, tell us at <a href="mailto:{{ site.email }}">{{ site.email }}</a> and we will fix it.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="/">Back to the home page</a>
+        <a class="btn btn-outline" href="/give/">Ways to give</a>
+        <a class="btn btn-outline" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>

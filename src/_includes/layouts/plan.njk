@@ -25,9 +25,8 @@
   <meta name="theme-color" content="#F6ECDF">
   <meta name="color-scheme" content="light">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Figtree:wght@400;500;600;700&family=Covered+By+Your+Grace&display=swap">
+  <link rel="preload" href="/assets/fonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 
   {% if isHome %}<link rel="preload" as="image" href="/assets/images/plan/house-drawing-2000.webp" imagesrcset="{{ '/assets/images/plan/house-drawing-1000.webp' | url }} 1000w, {{ '/assets/images/plan/house-drawing-2000.webp' | url }} 2000w" imagesizes="100vw" fetchpriority="high">{% endif %}
   {% if not isHome and hero_image %}<link rel="preload" as="image" href="{{ hero_image }}" fetchpriority="high">{% endif %}
@@ -60,8 +59,13 @@
       <img src="/assets/images/logo-lockup.svg" alt="{{ site.title }}" width="320" height="100">
     </a>
     <div class="chrome-right">
-      <a class="btn btn-outline btn-give" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=header&amp;utm_campaign=the-plan" target="_blank" rel="noopener"><span class="btn-give-long">Give now</span><span class="btn-give-short" aria-hidden="true">Give</span></a>
+      {% if page.url == '/give/' %}
+      {# On the money page the header has one job: the gift. "Fund a line" would send the donor back to the home page. #}
+      <a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=header-give&amp;utm_campaign=the-plan" target="_blank" rel="noopener">Give now</a>
+      {% else %}
+      <a class="btn btn-outline btn-give" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=header&amp;utm_campaign=the-plan" target="_blank" rel="noopener" aria-label="Give now"><span class="btn-give-long">Give now</span><span class="btn-give-short" aria-hidden="true">Give</span></a>
       <a class="btn btn-gold" href="{% if isHome %}#fund{% else %}/#fund{% endif %}">Fund a line</a>
+      {% endif %}
       <button class="chrome-menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
         <span class="sr-only">Menu</span><i></i><i></i>
       </button>
@@ -93,7 +97,7 @@
       <a href="tel:{{ site.phone | replace('-', '') }}">{{ site.phone }}</a>
       <a href="/contact/">Contact</a>
     </p>
-    <p class="foot-small">&copy; {% year %} {{ site.title }}. The house location stays private to protect the women who live there.</p>
+    <p class="foot-small">&copy; {% year %} {{ site.title }}. The house location will stay private to protect the women who will live there.</p>
   </footer>
 
   <script src="/assets/plan.js" defer></script>
