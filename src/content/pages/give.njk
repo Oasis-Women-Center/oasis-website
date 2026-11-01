@@ -42,7 +42,7 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
     <p class="note" style="margin-top:8px;">A registered 501(c)(3) nonprofit, EIN {{ site.ein }}. Contributions are tax deductible to the extent allowed by law.</p>
   </div>
   <div class="col col-photo" data-open>
-    <img src="/assets/images/photos/house-exterior-wide.webp" alt="A single-story brick home with a green lawn and a driveway on a sunny day." width="1536" height="1024" loading="lazy" decoding="async" style="--pos:48% 50%">
+    <img src="/assets/images/photos/house-exterior-wide.webp" alt="A single-story brick home with a covered porch, a green lawn, a driveway, and a live oak in the afternoon sun." width="1536" height="1024" loading="lazy" decoding="async" style="--pos:48% 50%">
   </div>
 </section>
 
@@ -57,7 +57,7 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
     <ul class="strip" data-rv style="--d:.1s">
       {%- for ln in plan.lines %}
       <li>
-        <a href="/#fund">
+        <a href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=give-line&amp;utm_campaign=the-plan&amp;utm_content={{ ln.id }}" target="_blank" rel="noopener">
           <img src="/assets/images/plan/{{ ln.drawing }}" alt="" width="900" height="900" loading="lazy" decoding="async">
           <span class="hand">{{ ln.words }}</span>
         </a>

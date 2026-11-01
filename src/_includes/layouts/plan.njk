@@ -59,13 +59,11 @@
       <img src="/assets/images/logo-lockup.svg" alt="{{ site.title }}" width="320" height="100">
     </a>
     <div class="chrome-right">
-      {% if page.url == '/give/' %}
-      {# On the money page the header has one job: the gift. "Fund a line" would send the donor back to the home page. #}
-      <a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=header-give&amp;utm_campaign=the-plan" target="_blank" rel="noopener">Give now</a>
-      {% else %}
-      <a class="btn btn-outline btn-give" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=header&amp;utm_campaign=the-plan" target="_blank" rel="noopener" aria-label="Give now"><span class="btn-give-long">Give now</span><span class="btn-give-short" aria-hidden="true">Give</span></a>
-      <a class="btn btn-gold" href="{% if isHome %}#fund{% else %}/#fund{% endif %}">Fund a line</a>
+      {# The gold button is the gift, on every page, in the same spot. "Fund a line" is the quieter way in, and is left off the money page because it would send the donor back to the home page. #}
+      {% if page.url != '/give/' %}
+      <a class="btn btn-outline" href="{% if isHome %}#fund{% else %}/#fund{% endif %}">Fund a line</a>
       {% endif %}
+      <a class="btn btn-gold" href="{{ site.donation_url }}?utm_source=site&amp;utm_medium={% if page.url == '/give/' %}header-give{% else %}header{% endif %}&amp;utm_campaign=the-plan" target="_blank" rel="noopener" aria-label="Give now"><span class="btn-give-long">Give now</span><span class="btn-give-short" aria-hidden="true">Give</span></a>
       <button class="chrome-menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
         <span class="sr-only">Menu</span><i></i><i></i>
       </button>

@@ -2,6 +2,9 @@
 title: News & Updates
 layout: layouts/page.njk
 permalink: /blog/
+# Kept out of search and the sitemap until the first post exists; the flag clears itself when one is published.
+eleventyComputed:
+  noindex: "{% if collections.posts | length %}{% else %}true{% endif %}"
 wide: true
 eyebrow: News
 hero_heading: News and updates

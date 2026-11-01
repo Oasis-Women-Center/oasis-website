@@ -85,8 +85,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .chrome-brand img { height: 46px; width: auto; }
 .chrome.is-scrolled .chrome-brand img { height: 40px; }
 .chrome-right { display: flex; align-items: center; gap: 12px; }
-.chrome .btn-give { background: var(--paper-hi); }
-.chrome .btn-give:hover { background: var(--pine); }
+.chrome .btn-outline { background: var(--paper-hi); }
+.chrome .btn-outline:hover { background: var(--pine); }
 .btn-give-short { display: none; }
 .chrome-menu { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--pine); background: var(--paper-hi); display: grid; place-content: center; gap: 6px; cursor: pointer; padding: 0; }
 .chrome-menu i { display: block; width: 18px; height: 1.6px; background: var(--pine); transition: transform .3s var(--ease); }
@@ -333,7 +333,7 @@ figure.note figcaption span { display: block; font-size: 14px; color: var(--mute
   body { font-size: 16px; }
   .chrome { padding: 12px 16px; }
   .chrome-brand img { height: 36px; }
-  .chrome .btn-gold, .chrome .btn-give { padding: 12px 15px; font-size: 14px; }
+  .chrome .btn-gold, .chrome .btn-outline { padding: 12px 15px; font-size: 14px; }
   .chrome-right { gap: 8px; }
   .btn-give-long { display: none; }
   .btn-give-short { display: inline; }
