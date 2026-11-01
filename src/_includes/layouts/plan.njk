@@ -4,7 +4,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  {# Google Tag Manager. Renders only once site.gtm_id (site.json) holds a container ID. #}
+  {% if site.gtm_id %}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ site.gtm_id }}');</script>{% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
   <title>{{ pageTitle | safe }}</title>
 
   <meta name="description" content="{{ meta_description or site.tagline }}">
@@ -49,6 +52,7 @@
   </script>
 </head>
 <body class="plan">
+  {% if site.gtm_id %}<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.gtm_id }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>{% endif %}
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="chrome" data-chrome>

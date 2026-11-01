@@ -1,0 +1,44 @@
+---
+title: Thank you
+layout: layouts/page.njk
+permalink: /thank-you/
+wide: true
+noindex: true
+eyebrow: Thank you
+hero_heading: Thank you for standing with her
+hero_accent: standing with her
+hero_subtext: Your gift has been received. A receipt is on its way to your inbox.
+hero_note: a bridge long enough to reach solid ground
+hero_image: /assets/images/photos/porch-evening.webp
+hero_w: 1024
+hero_h: 1024
+hero_alt: A front door lit by a porch light at dusk, with wooden steps and a potted plant beside it.
+hero_pos: 50% 38%
+meta_description: Thank you for your gift to Oasis Women Center.
+---
+
+{# The page Zeffy sends donors to after a gift. It exists so a completed gift can be counted:
+   the event below goes to the tag manager once site.gtm_id is set in site.json. #}
+
+<section class="bd bd-paper" aria-labelledby="ty-h">
+  <div class="bd-in rl">
+    <div class="rl-head" data-rv>
+      <p class="eyebrow">What happens next</p>
+      <h2 class="title" id="ty-h">Your gift is <em>received</em>.</h2>
+    </div>
+    <div class="ed" data-rv style="--d:.1s">
+      <p>Zeffy emails your receipt right away. If it has not arrived in a few minutes, look in your spam folder.</p>
+      <p>Oasis Women Center is a registered 501(c)(3) nonprofit, EIN {{ site.ein }}. Contributions are tax deductible to the extent allowed by law.</p>
+      <p>We are pre-house, and we will not pretend otherwise. Every gift moves us closer to the first home for women leaving recovery in Denton County.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="/give/">More ways to help</a>
+        <a class="btn btn-outline" href="/">Back to the home page</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'donation_thank_you' });
+</script>
