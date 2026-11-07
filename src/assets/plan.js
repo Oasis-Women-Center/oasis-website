@@ -282,20 +282,27 @@
   measure();
 })();
 
-/* testimonial video: a still with one play button; the native controls (and captions) take over on play.
-   Without JS the video keeps its native controls. */
+/* testimonial videos: a still with one play button; the native controls (and captions) take over on play.
+   Without JS each video keeps its native controls. Starting one pauses the others. */
 (function () {
-  var box = document.querySelector("[data-voice]");
-  if (!box) return;
-  var v = box.querySelector("video"), b = box.querySelector(".print-play"), print = box.closest(".print");
-  if (!v || !b) return;
-  v.removeAttribute("controls");
-  b.hidden = false;
-  b.addEventListener("click", function () {
-    v.setAttribute("controls", "");
-    b.hidden = true;
-    if (print) print.classList.add("is-playing");
-    var p = v.play();
-    if (p && p.catch) p.catch(function () { v.removeAttribute("controls"); b.hidden = false; });
+  var boxes = document.querySelectorAll("[data-voice]");
+  if (!boxes.length) return;
+  var all = [];
+  Array.prototype.forEach.call(boxes, function (box) {
+    var v = box.querySelector("video"), b = box.querySelector(".print-play"), print = box.closest(".print");
+    if (!v || !b) return;
+    all.push(v);
+    v.removeAttribute("controls");
+    b.hidden = false;
+    b.addEventListener("click", function () {
+      v.setAttribute("controls", "");
+      b.hidden = true;
+      if (print) print.classList.add("is-playing");
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { v.removeAttribute("controls"); b.hidden = false; });
+    });
+    v.addEventListener("play", function () {
+      all.forEach(function (o) { if (o !== v && !o.paused) o.pause(); });
+    });
   });
 })();

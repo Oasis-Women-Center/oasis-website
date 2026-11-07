@@ -240,26 +240,30 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
   </div>
 </section>
 
-<!-- ============ 6b · VOICES (rest; proof. One featured video, written voices as they arrive) ============ -->
-{# Data lives in src/content/_data/voices.json. "featured" is the video; "written" is a list, each entry
-   { approved, quote, name, role }. Nothing renders unless approved is true: no testimonial goes live
-   without the person's OK. Quotes are the speaker's own words, unedited. Captions ship as a WebVTT
-   track so they can be turned off and read by screen readers. #}
-{%- set v = voices.featured %}
-{%- if v and v.approved %}
+<!-- ============ 6b · VOICES (rest; proof. Video testimonials, then written voices as they arrive) ============ -->
+{# Data lives in src/content/_data/voices.json. "videos" is a list; each is
+   { approved, label, name, org (optional), quote, emphasis, context, video, poster, captions, duration, width, height, ar }.
+   "written" is a list, each entry { approved, quote, name, role }. Nothing renders unless approved is true: no
+   testimonial goes live without the person's OK. Quotes are the speaker's own words, unedited. Captions ship as a
+   WebVTT track so they can be turned off and read by screen readers. Every second video flips sides. #}
+{%- set shown = [] %}
+{%- for v in voices.videos %}{% if v.approved %}{% set shown = (shown.push(v), shown) %}{% endif %}{% endfor %}
+{%- set more = voices.written | selectattr('approved') %}
+{%- if shown | length or more | length %}
 <section class="voices" aria-label="Testimonials">
-  <div class="split voice">
+  {%- for v in shown %}
+  <div class="split voice{% if loop.index0 is odd %} voice-flip{% endif %}">
     <div class="col col-ink voice-stage">
       <figure class="print">
         <div class="print-frame">
           <span class="print-tape" aria-hidden="true"></span>
-          <div class="print-media" data-voice>
-            <video controls preload="none" playsinline poster="{{ v.poster }}" width="{{ v.width }}" height="{{ v.height }}" aria-label="{{ v.name }} of {{ v.org }} talks about working alongside Keisha Ortiz">
+          <div class="print-media" data-voice{% if v.ar %} style="--ar: {{ v.ar }}"{% endif %}>
+            <video controls preload="none" playsinline poster="{{ v.poster }}" width="{{ v.width }}" height="{{ v.height }}" aria-label="{{ v.name }}{% if v.org %} of {{ v.org }}{% endif %} talks about Keisha Ortiz">
               <source src="{{ v.video }}" type="video/mp4">
               <track kind="captions" srclang="en" label="English" src="{{ v.captions }}" default>
-              Your browser does not play video. {{ v.name }} of {{ v.org }} says: {{ v.quote }}
+              Your browser does not play video. {{ v.name }}{% if v.org %} of {{ v.org }}{% endif %} says: {{ v.quote }}
             </video>
-            <button type="button" class="print-play" hidden aria-label="Play video: {{ v.name }}, {{ v.org }}, {{ v.duration }}">
+            <button type="button" class="print-play" hidden aria-label="Play video: {{ v.name }}{% if v.org %}, {{ v.org }}{% endif %}, {{ v.duration }}">
               <span class="print-play-btn" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
               <span class="print-play-lbl">Hear it from her &middot; {{ v.duration }}</span>
             </button>
@@ -274,11 +278,11 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
         {%- set parts = v.quote.split(v.emphasis) if v.emphasis else [v.quote] %}
         <p>&ldquo;{{ parts[0] }}{% if parts.length > 1 %}<em>{{ v.emphasis }}</em>{{ parts[1] }}{% endif %}&rdquo;</p>
       </blockquote>
-      <p class="founder-name">{{ v.name }} <span>{{ v.org }}</span></p>
+      <p class="founder-name">{{ v.name }}{% if v.org %} <span>{{ v.org }}</span>{% endif %}</p>
       <p class="voice-context">{{ v.context }}</p>
     </div>
   </div>
-  {%- set more = voices.written | selectattr('approved') %}
+  {%- endfor %}
   {%- if more | length %}
   <div class="voices-more">
     <div class="voices-more-in">

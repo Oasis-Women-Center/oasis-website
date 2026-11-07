@@ -1,18 +1,36 @@
 {
-  "featured": {
-    "approved": true,
-    "label": "From another nonprofit",
-    "name": "Rita Stevens",
-    "org": "Silent Voyces",
-    "quote": "She is always dedicated, on time, and she makes sure that she’s following through on those tasks.",
-    "emphasis": "dedicated, on time,",
-    "context": "Keisha has served as the volunteer coordinator on the board of Silent Voyces. Nonprofits do their best work side by side, and Oasis is one more hand on the same work.",
-    "video": "/assets/video/rita-stevens-testimonial.mp4",
-    "poster": "/assets/video/rita-stevens-poster-warm.webp",
-    "captions": "/assets/video/rita-stevens-testimonial.en.vtt",
-    "duration": "0:52",
-    "width": 720,
-    "height": 1600
-  },
+  "videos": [
+    {
+      "approved": true,
+      "label": "From another nonprofit",
+      "name": "Rita Stevens",
+      "org": "Silent Voyces",
+      "quote": "She is always dedicated, on time, and she makes sure that she’s following through on those tasks.",
+      "emphasis": "dedicated, on time,",
+      "context": "Keisha has served as the volunteer coordinator on the board of Silent Voyces. Nonprofits do their best work side by side, and Oasis is one more hand on the same work.",
+      "video": "/assets/video/rita-stevens-testimonial.mp4",
+      "poster": "/assets/video/rita-stevens-poster-warm.webp",
+      "captions": "/assets/video/rita-stevens-testimonial.en.vtt",
+      "duration": "0:52",
+      "width": 720,
+      "height": 1600,
+      "ar": "9 / 17"
+    },
+    {
+      "approved": true,
+      "label": "From a woman she walked alongside",
+      "name": "Cheryl Foster",
+      "quote": "So many of us give up on our dreams or our goals because we don’t see a way or we think things are too hard, and that has never stopped her.",
+      "emphasis": "has never stopped her.",
+      "context": "Cheryl has known Keisha for three years. She calls her a friend and a sister in Christ.",
+      "video": "/assets/video/cheryl-foster-testimonial.mp4",
+      "poster": "/assets/video/cheryl-foster-poster.webp",
+      "captions": "/assets/video/cheryl-foster-testimonial.en.vtt",
+      "duration": "2:18",
+      "width": 720,
+      "height": 1280,
+      "ar": "9 / 16"
+    }
+  ],
   "written": []
 }
