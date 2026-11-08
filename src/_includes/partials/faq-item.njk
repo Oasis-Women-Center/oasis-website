@@ -1,0 +1,13 @@
+{# One question. Set `item` before including. Native <details>: works with no script, keyboard and screen-reader friendly. #}
+<details class="faq-item" id="{{ item.id }}">
+  <summary><span>{{ item.q }}</span><i class="faq-mark" aria-hidden="true"></i></summary>
+  <div class="faq-a">
+    {%- for b in item.a %}
+    {%- if b is string %}
+    <p>{{ b | safe }}</p>
+    {%- else %}
+    <ul>{% for li in b.ul %}<li>{{ li | safe }}</li>{% endfor %}</ul>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</details>

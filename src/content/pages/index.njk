@@ -240,6 +240,24 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
   </div>
 </section>
 
+<!-- ============ 6a · QUESTIONS (rest; five answers up front, the rest on /faq/) ============ -->
+{# Data lives in src/content/_data/faq.json. An item shows here when "home" is true and it is not "held". #}
+<section class="faqh" aria-labelledby="faqh-h">
+  <div class="faqh-in">
+    <div class="faqh-head">
+      <p class="eyebrow">Questions people ask first</p>
+      <h2 id="faqh-h" class="title">The questions we <em>hear first.</em></h2>
+      <p class="lede">Who the house is for, where it will be, what a gift does, and when the doors open.</p>
+      <a class="btn btn-outline" href="/faq/">Read every question</a>
+    </div>
+    <div class="faq-list" data-faq>
+      {%- for item in faq.items %}{% if item.home and not item.held %}
+      {% include "partials/faq-item.njk" %}
+      {%- endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
 <!-- ============ 6b · VOICES (rest; proof. Video testimonials, then written voices as they arrive) ============ -->
 {# Data lives in src/content/_data/voices.json. "videos" is a list; each is
    { approved, label, name, org (optional), quote, emphasis, context, video, poster, captions, duration, width, height, ar }.

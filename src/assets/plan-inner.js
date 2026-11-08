@@ -17,3 +17,16 @@
   Array.prototype.forEach.call(els, function (el) { io.observe(el); });
   window.setTimeout(showAll, 2500);
 })();
+
+/* FAQ: a link like /faq/#how-can-i-volunteer opens that question. */
+(function () {
+  "use strict";
+  var open = function () {
+    var id = decodeURIComponent((window.location.hash || "").slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === "DETAILS") { el.open = true; }
+  };
+  open();
+  window.addEventListener("hashchange", open);
+})();

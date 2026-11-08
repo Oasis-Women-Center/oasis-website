@@ -1,0 +1,73 @@
+---
+title: Frequently Asked Questions
+layout: layouts/page.njk
+permalink: /faq/
+wide: true
+eyebrow: Questions
+hero_heading: What people ask first
+hero_accent: ask first
+hero_subtext: Plain answers about who the house is for, how to give, how to refer a woman, and how to help. We are pre-house, and the answers say so.
+hero_note: a safe, supportive home
+hero_image: /assets/images/photos/room-morning-day.webp
+hero_w: 1536
+hero_h: 1024
+hero_alt: A single bed with a cream quilted cover, a lamp, and a Bible on the nightstand beside a sunlit window.
+hero_pos: 50% 62%
+meta_description: "Common questions about Oasis Women Center: who the house is for, how to refer a woman, how gifts are used, how to volunteer, and when it opens."
+---
+
+{# Data lives in src/content/_data/faq.json. Items marked "held" are written but do not render until the flag is flipped. #}
+{%- set core = [] %}{%- set more = [] %}{%- set live = [] %}
+{%- for it in faq.items %}{% if not it.held %}{% set live = (live.push(it), live) %}{% if it.group == 'more' %}{% set more = (more.push(it), more) %}{% else %}{% set core = (core.push(it), core) %}{% endif %}{% endif %}{% endfor %}
+
+<section class="bd bd-paper faq-page" aria-labelledby="faq-core-h">
+  <div class="bd-in">
+    <div class="faq-wrap">
+      <aside class="faq-notice" role="note" aria-label="Where Oasis is right now" data-rv>
+        <p class="eyebrow">Where we are right now</p>
+        <p>{{ faq.notice }}</p>
+      </aside>
+
+      <h2 id="faq-core-h" class="sr-only">Questions about the house, giving, and volunteering</h2>
+      <div class="faq-list" data-faq>
+        {%- for item in core %}
+        {% include "partials/faq-item.njk" %}
+        {%- endfor %}
+      </div>
+
+      {%- if more | length %}
+      <div class="faq-group">
+        <p class="eyebrow">More questions</p>
+        <h2 class="title title-sm" id="faq-more-h">The ones that come next.</h2>
+      </div>
+      <div class="faq-list" data-faq aria-labelledby="faq-more-h">
+        {%- for item in more %}
+        {% include "partials/faq-item.njk" %}
+        {%- endfor %}
+      </div>
+      {%- endif %}
+
+      <p class="faq-end">Did not find yours? <a href="/contact/">Send us the question</a>, or call <a href="tel:{{ site.phone | replace('-', '') }}">{{ site.phone }}</a>.</p>
+    </div>
+  </div>
+</section>
+
+{# FAQPage markup, built from the same data so the page and the markup cannot drift apart. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {%- for it in live %}
+    {
+      "@type": "Question",
+      "name": {{ it.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {% set parts = [] %}{% for b in it.a %}{% if b is string %}{% set parts = (parts.push(b | striptags), parts) %}{% else %}{% for li in b.ul %}{% set parts = (parts.push(li | striptags), parts) %}{% endfor %}{% endif %}{% endfor %}{{ parts | join(' ') | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+  {%- endfor %}
+  ]
+}
+</script>

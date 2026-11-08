@@ -92,10 +92,10 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .chrome-menu i { display: block; width: 18px; height: 1.6px; background: var(--pine); transition: transform .3s var(--ease); }
 .chrome-menu[aria-expanded="true"] i:first-of-type { transform: translateY(3.8px) rotate(45deg); }
 .chrome-menu[aria-expanded="true"] i:last-of-type { transform: translateY(-3.8px) rotate(-45deg); }
-.menu { position: fixed; inset: 0; z-index: 45; background: var(--paper); display: grid; place-items: center; }
+.menu { position: fixed; inset: 0; z-index: 45; background: var(--paper); display: grid; place-items: center; overflow-y: auto; }
 .menu[hidden] { display: none; }
 .menu-inner { display: grid; gap: 6px; text-align: left; padding: 0 var(--gutter); }
-.menu a { font: 300 clamp(36px, 6vw, 72px)/1.1 var(--display); letter-spacing: -.02em; color: var(--pine); text-decoration: none; }
+.menu a { font: 300 clamp(34px, min(6vw, 8vh), 72px)/1.1 var(--display); letter-spacing: -.02em; color: var(--pine); text-decoration: none; }
 .menu a:hover { color: var(--gold-deep); font-style: italic; }
 .menu .menu-give { color: var(--gold-deep); font-style: italic; }
 
@@ -184,6 +184,48 @@ figure.note p { font: 300 clamp(21px, 1.7vw, 26px)/1.3 var(--display); letter-sp
 figure.note figcaption strong { display: block; font: 600 15px/1.4 var(--sans); color: var(--pine); }
 figure.note figcaption span { display: block; font-size: 14px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .print, .print-play-btn { transition: none; } }
+
+/* ---------- questions: hairline rows, no boxes. A rest section on the home page, the whole of /faq/. ---------- */
+.faq-list { border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; padding: 24px 0; font: 300 clamp(22px, 2vw, 30px)/1.22 var(--display); letter-spacing: -.012em; color: var(--pine); transition: color .25s; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { color: var(--gold-deep); }
+.faq-item summary:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 4px; border-radius: 4px; }
+.faq-mark { flex: none; position: relative; width: 14px; height: 14px; margin-top: .36em; }
+.faq-mark::before, .faq-mark::after { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 1.6px; background: currentColor; transition: transform .3s var(--ease); }
+.faq-mark::after { transform: rotate(90deg); }
+.faq-item[open] .faq-mark::after { transform: rotate(0); }
+.faq-item[open] summary { color: var(--gold-deep); }
+.faq-a { padding: 0 0 28px; max-width: 62ch; }
+.faq-a p { font-size: 17.5px; line-height: 1.68; margin: 0 0 1em; color: var(--ink); }
+.faq-a ul { margin: 0 0 1em; padding-left: 1.15em; }
+.faq-a li { font-size: 17.5px; line-height: 1.62; margin: 0 0 .7em; color: var(--ink); }
+.faq-a li::marker { color: var(--gold-deep); }
+.faq-a strong { color: var(--pine); font-weight: 600; }
+.faq-a a { text-decoration-color: rgba(217, 153, 59, .8); text-underline-offset: 4px; }
+.faq-a > :last-child { margin-bottom: 0; }
+
+.faqh { background: var(--paper-hi); padding: clamp(72px, 9vw, 140px) var(--gutter); border-top: 1px solid var(--rule); }
+.faqh-in { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 110px); align-items: start; }
+.faqh-head { position: sticky; top: 112px; }
+.faqh-head .lede { margin: 0 0 30px; }
+
+.faq-wrap { max-width: 860px; margin: 0 auto; }
+.faq-notice { border-left: 2px solid var(--gold); background: var(--paper-hi); padding: 22px 28px 24px; margin: 0 0 clamp(40px, 5vw, 72px); }
+.faq-notice .eyebrow { margin-bottom: 10px; }
+.faq-notice p:last-child { margin: 0; font-size: 18px; line-height: 1.6; max-width: 60ch; }
+.faq-group { margin: clamp(56px, 7vw, 100px) 0 8px; }
+.faq-group .title { margin-bottom: 18px; }
+.faq-end { margin: clamp(40px, 5vw, 64px) 0 0; font-size: 18px; }
+.faq-end a { text-decoration-color: rgba(217, 153, 59, .8); text-underline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .faqh-in { grid-template-columns: 1fr; gap: 36px; }
+  .faqh-head { position: static; }
+  .faq-item summary { padding: 20px 0; }
+  .faq-notice { padding: 20px 20px 22px; }
+}
 
 /* ---------- 2 · drawing to doorstep (pinned scrub) ---------- */
 .build { position: relative; background: var(--paper-hi); }

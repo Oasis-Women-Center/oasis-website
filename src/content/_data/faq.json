@@ -1,0 +1,218 @@
+{
+  "_about": "FAQ content for /faq/ and the home page band. 'group' is core or more. 'home' puts a question on the home page. 'held' keeps an item written but off the site.",
+  "notice": "Oasis Women Center is in the pre-launch stage. We have not yet secured a house and are not currently accepting residents. We are accepting interest-waitlist inquiries as we prepare to open. Joining the waitlist does not guarantee housing or an admission date.",
+  "items": [
+    {
+      "id": "who-is-the-house-for",
+      "group": "core",
+      "home": true,
+      "q": "Who is the house for?",
+      "a": [
+        "Oasis Women Center is a <strong>Christ-centered</strong> transitional home for women in Denton County, who have completed a recovery program and need a safe, supportive place to prepare for independent living.",
+        "We serve women with limited income who can demonstrate financial hardship through transitional housing, financial literacy/education, transportation assistance, and connections to mental health resources. Rooted in Christian compassion, our approach combines encouragement, personal responsibility, and respect for every woman’s dignity.",
+        "Women of all backgrounds and beliefs are welcome. Prayer, Bible study, and other spiritual activities are included throughout the program.",
+        "Oasis provides recovery-supportive housing, not detoxification, inpatient treatment, or emergency shelter. Admission depends on space availability and whether our program can appropriately meet each woman’s needs.",
+        "Selection is never based on ability to pay."
+      ]
+    },
+    {
+      "id": "how-do-i-refer-a-woman",
+      "group": "core",
+      "home": false,
+      "q": "How do I refer a woman?",
+      "a": [
+        "Oasis Women Center is currently in the <strong>pre-launch</strong> stage and has not yet secured a house. We are accepting referrals for our interest waitlist, but we are not able to offer housing or move-in dates at this time.",
+        "If you work at a shelter, treatment program, hospital, or church, and you know a woman who has completed recovery and has nowhere stable to go, tell us about her.",
+        "To refer a woman or inquire for yourself, contact us by phone at <a href=\"tel:2148156327\">214-815-6327</a>, by email at <a href=\"mailto:info@oasiswomencenter.org\">info@oasiswomencenter.org</a>, or through our <a href=\"/contact/\">online referral form</a>.",
+        "Here is what happens next:",
+        { "ul": [
+          "<strong>We follow up.</strong> Our designated intake contact will respond within three business days to acknowledge the referral and explain our current status.",
+          "<strong>We discuss her needs.</strong> With the woman’s permission, we gather basic information about her housing needs, recovery stage, and interest in our Christ-centered transitional-housing program.",
+          "<strong>We add her to the waitlist.</strong> Women interested in the program will be added to our interest waitlist so we can contact them as opening plans become clearer. Referring someone else requires her permission.",
+          "<strong>We reconnect when housing becomes available.</strong> We will contact prospective residents to confirm continued interest, explain current eligibility and costs, and complete the admission assessment."
+        ] },
+        "Joining the waitlist does not guarantee admission, a bed, or a particular placement date. Women should continue pursuing other housing options while awaiting updates from Oasis.",
+        "Please do not submit sensitive medical or treatment records through a general website form or unsecured email. Oasis is not currently providing emergency housing or crisis-response services."
+      ]
+    },
+    {
+      "id": "where-will-the-house-be-located",
+      "group": "core",
+      "home": true,
+      "q": "Where will the house be located?",
+      "a": [
+        "Our transitional house will be in Denton County, Texas. Its location will be kept confidential. This is standard practice for residential programs serving women in crisis, as a means of safety and privacy for residents."
+      ]
+    },
+    {
+      "id": "is-the-program-faith-based",
+      "group": "core",
+      "home": false,
+      "q": "Is the program faith-based?",
+      "a": [
+        "Oasis Women Center is a Christ-centered transitional-housing program for women moving from recovery toward independent living.",
+        "Our mission is to walk alongside women recovering from drug and/or alcohol addiction in a Christ-centered environment as they journey toward self sufficiency. We serve women regardless of their ability to pay, and we do not discriminate on the basis of race, color, religion, national origin, disability, age, or any other characteristic protected by law.",
+        "Our Christian faith shapes our mission, our community, and the compassionate way we serve.",
+        "Prayer, Bible study, Christian fellowship, and opportunities for worship are an important part of our program. We strongly encourage residents to participate as they build spiritual support alongside practical skills for independent living.",
+        "Prospective residents will receive a clear explanation of our faith-based approach, program activities, and resident expectations before deciding whether Oasis is the right fit for them."
+      ]
+    },
+    {
+      "id": "is-my-gift-tax-deductible",
+      "group": "core",
+      "home": true,
+      "q": "Is my gift tax-deductible?",
+      "a": [
+        "Yes. Oasis Women Center is a registered 501(c)(3) nonprofit, EIN 99-1931849. Contributions are tax deductible to the extent allowed by law. Zeffy emails your receipt right away."
+      ]
+    },
+    {
+      "id": "where-does-my-gift-go",
+      "group": "core",
+      "home": true,
+      "q": "Where does my gift go, and what does “fund a line” mean?",
+      "a": [
+        "Each line on our plan is a real need with a price, such as transportation, kitchen items, or a dining table. When you fund a line, your gift goes toward that exact need. If you would rather give to the whole organization, choose Give Now. Some lines, such as windows, depend on the condition of the house once we have it, and we will update the list when the actual work is known.",
+        "<strong>When a line item reaches its goal, any additional gifts to that item will be applied to the remaining start up costs of establishing and opening the Oasis home.</strong> This allows your generosity to keep moving the whole project forward."
+      ]
+    },
+    {
+      "id": "what-items-can-i-donate",
+      "group": "core",
+      "home": false,
+      "q": "What items can I donate, and do I need approval first?",
+      "a": [
+        "We welcome items and services such as furniture, a bed, a dresser, Uber gift cards, financial literacy teaching, and professional services. Use the form on our <a href=\"/contact/\">Contact page</a> and choose the category that fits, and your message reaches us pre-sorted.",
+        "Please contact us before donating physical items. Oasis has not yet secured a house and has limited storage capacity. We can provide you with a list of accepted preapproved items that meet our current needs. All gifts are subject to review for safety, usefulness, donor restrictions, and alignment with our mission."
+      ]
+    },
+    {
+      "id": "when-will-the-house-open",
+      "group": "core",
+      "home": true,
+      "q": "When will the house open?",
+      "a": [
+        "We are preparing to open our Christ-centered transitional home, but we have not yet secured a house or confirmed an opening date. Every gift moves us closer to the first home for women in recovery in Denton County.",
+        "Please check back for updates on our progress. Once we have a confirmed launch date and are 30 days away from opening, we will display a countdown on our website.",
+        "We look forward to welcoming women into a safe, supportive home where they can continue their journey from recovery toward independent living."
+      ]
+    },
+    {
+      "id": "how-can-i-volunteer",
+      "group": "core",
+      "home": false,
+      "q": "How can I volunteer?",
+      "a": [
+        "You do not have to wait until our doors open to help build Oasis Women Center.",
+        "We are currently seeking volunteers to support fundraising, church and community outreach, grant research, social media projects, administrative coordination, and program planning. We also welcome qualified professionals willing to share their expertise in finance, law, housing, transportation, and mental health resource development.",
+        "As a Christ-centered organization, we welcome prayer and encouragement as we prepare a safe, supportive home for women transitioning from recovery to independent living.",
+        "Since we have not yet secured a house, current volunteer opportunities focus on preparation rather than direct resident services. You may also join our interest list for future mentoring, transportation, workshops, and house-setup opportunities.",
+        "Contact us to share your skills, interests, and availability. We will discuss current needs and determine where you can make the greatest contribution."
+      ]
+    },
+    {
+      "id": "does-joining-the-waitlist-guarantee-a-bed",
+      "group": "more",
+      "home": false,
+      "q": "Does joining the waitlist guarantee a bed?",
+      "a": [
+        "No. Joining Oasis Women Center’s interest waitlist lets us know that a woman may be interested in our future program. It does not guarantee admission, reserve a bed, establish placement priority, or confirm a move-in date.",
+        "Oasis is currently in the pre-launch stage. We have not yet secured a house or confirmed when we will begin accepting residents. Once a location and opening plans are established, prospective residents will need to complete an admission assessment. Placement will depend on eligibility, available space, and whether our program can appropriately meet each woman’s needs.",
+        "We encourage women and referral partners to continue exploring other housing options while awaiting updates. Please do not delay a safe, suitable housing opportunity because you are on the Oasis waitlist."
+      ]
+    },
+    {
+      "id": "what-happens-after-i-submit-a-referral",
+      "group": "more",
+      "home": false,
+      "q": "What happens after I submit a referral or join the waitlist?",
+      "a": [
+        "Our designated intake contact will aim to respond within three business days to acknowledge your inquiry, explain our current status, and discuss next steps. Messages received outside our posted office hours will be reviewed on the next business day.",
+        "Here is what to expect:",
+        { "ul": [
+          "<strong>Initial follow-up.</strong> We will contact the prospective resident or referring person to explain our Christ-centered program, planned services, and pre-launch status. If you are referring someone else, please obtain her permission before sharing her information.",
+          "<strong>Basic information and interest.</strong> With the woman’s permission, we will gather basic contact information, discuss her housing needs, and confirm her interest in Oasis. This conversation is not a full admission assessment or an acceptance decision.",
+          "<strong>Addition to the interest waitlist.</strong> Interested women will be added to our waitlist for future contact. Please let us know if contact details, housing needs, or interest in the program change.",
+          "<strong>Full assessment when opening approaches.</strong> Once we have a confirmed location, clearer opening plans, and finalized admission requirements, we will begin contacting prospective residents for a full assessment. We will explain fees, services, faith-related expectations, resident responsibilities, and available space before anyone decides whether to enroll.",
+          "<strong>Admission decision and move-in planning.</strong> Women offered admission will receive instructions about required paperwork, orientation, and move-in arrangements. A move-in date will be provided only after admission is confirmed and the home is ready."
+        ] },
+        "Please do not send medical records, detailed treatment histories, Social Security numbers, or other sensitive documents through a general website form or ordinary email. If additional information is needed, we will explain how to submit it appropriately.",
+        "Oasis is not currently providing housing, emergency shelter, or crisis-response services."
+      ]
+    },
+    {
+      "id": "what-services-will-oasis-provide",
+      "group": "more",
+      "home": false,
+      "q": "What services will Oasis provide?",
+      "a": [
+        "Oasis Women Center is developing a Christ-centered program to help women bridge the gap between recovery and independent living. Our <strong>planned services</strong> center on four pillars:",
+        { "ul": [
+          "<strong>Transitional housing.</strong> A safe, structured, recovery-supportive home where women can work toward personal goals and prepare for stable, independent housing.",
+          "<strong>Financial literacy.</strong> Practical education in budgeting, banking, saving, understanding credit and debt, and preparing for the expenses of independent living.",
+          "<strong>Transportation assistance.</strong> Help planning and accessing transportation for employment, recovery activities, appointments, essential services, and housing searches. Available assistance will depend on our location, resources, and transportation arrangements.",
+          "<strong>Mental health resources.</strong> Connections to qualified mental health providers, assistance navigating available resources, and support coordinating appointments with the resident’s permission."
+        ] },
+        "These services will be connected through an individualized transition plan. We are still developing the program and will publish confirmed services, eligibility requirements, and service limits before admissions begin."
+      ]
+    },
+    {
+      "id": "does-oasis-provide-treatment",
+      "group": "more",
+      "home": false,
+      "q": "Does Oasis provide addiction treatment, counseling, or emergency housing?",
+      "a": [
+        "Oasis is being developed as a nonclinical, recovery-supportive transitional-housing program. We are not a detoxification center, inpatient addiction-treatment facility, psychiatric facility, or emergency shelter.",
+        "Oasis staff will focus on housing support, practical life skills, financial education, transportation assistance, and connections to community resources. Addiction treatment, professional mental health counseling, psychiatric care, and medication management will remain with appropriately licensed outside providers.",
+        "Our Christian encouragement and spiritual activities will not replace professional medical or mental health care. Access to outside services will depend on provider availability, eligibility, and payment arrangements; those services are not automatically included or guaranteed to be free.",
+        "We have not yet secured a house and are not currently providing residential services. Please do not wait for Oasis if you need immediate housing or urgent care."
+      ]
+    },
+    {
+      "id": "how-much-will-it-cost-to-live-at-oasis",
+      "group": "more",
+      "home": false,
+      "q": "How much will it cost to live at Oasis?",
+      "a": [
+        "Resident fees have not yet been finalized.",
+        "We are working to develop a financially sustainable program that considers the needs of women with limited income. Before a prospective resident commits to moving in, we will clearly explain:",
+        { "ul": [
+          "The resident fee and payment schedule.",
+          "Any deposit or other charges.",
+          "What is included and what may involve separate costs.",
+          "Payment, hardship, and refund policies.",
+          "Any financial assistance that is actually available at that time."
+        ] },
+        "We cannot currently guarantee scholarships, subsidized beds, or a particular monthly rate. We will publish confirmed pricing before admissions begin.",
+        "If you would like to volunteer your services in this program development area, please fill out the <a href=\"/contact/\">contact form</a>."
+      ]
+    },
+    {
+      "id": "how-can-i-receive-progress-updates",
+      "group": "more",
+      "home": false,
+      "q": "How can I receive progress updates?",
+      "a": [
+        "Please check this website for updates as we work toward securing a house and preparing Oasis Women Center to welcome residents.",
+        "We will share confirmed milestones, fundraising progress, volunteer opportunities, and opening information as they become available. Once we have a confirmed launch date and are 30 days away from opening, we will display a countdown on our website.",
+        "We do not yet have an opening date. Please continue exploring other housing options if you need a place to live before Oasis opens."
+      ]
+    },
+    {
+      "id": "who-can-i-contact-with-a-question",
+      "group": "more",
+      "home": false,
+      "q": "Who can I contact with a question?",
+      "a": [
+        "For questions about Oasis, referrals, the interest waitlist, donations, or volunteering, please contact us:",
+        { "ul": [
+          "<strong>Phone:</strong> <a href=\"tel:2148156327\">214-815-6327</a>",
+          "<strong>Email:</strong> <a href=\"mailto:info@oasiswomencenter.org\">info@oasiswomencenter.org</a>",
+          "<strong>Office hours:</strong> Monday through Friday, 12 PM to 6 PM CST"
+        ] },
+        "Our designated contact will aim to respond within three business days. Messages received outside office hours will be reviewed on the next business day.",
+        "Oasis is not an emergency or crisis-response service, and our phone, email, and website inquiries are not monitored around the clock. Please do not include sensitive medical or financial information in your initial message."
+      ]
+    }
+  ]
+}

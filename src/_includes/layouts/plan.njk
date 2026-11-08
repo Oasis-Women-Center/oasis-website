@@ -77,6 +77,7 @@
       <a href="/founder/"{% if page.url == '/founder/' %} aria-current="page"{% endif %}>Founder</a>
       <a href="/programs/"{% if page.url == '/programs/' %} aria-current="page"{% endif %}>Programs</a>
       <a href="/give/"{% if page.url == '/give/' %} aria-current="page"{% endif %}>Ways to give</a>
+      <a href="/faq/"{% if page.url == '/faq/' %} aria-current="page"{% endif %}>Questions</a>
       <a href="/contact/"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
       <a class="menu-give" href="{{ site.donation_url }}" target="_blank" rel="noopener">Give now</a>
     </div>
@@ -93,6 +94,7 @@
     <p class="foot-links">
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       <a href="tel:{{ site.phone | replace('-', '') }}">{{ site.phone }}</a>
+      <a href="/faq/">Questions</a>
       <a href="/contact/">Contact</a>
     </p>
     <p class="foot-small">&copy; {% year %} {{ site.title }}. The house location will stay private to protect the women who will live there.</p>
