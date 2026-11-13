@@ -171,6 +171,19 @@
 .mailbox { display: block; width: clamp(150px, 16vw, 220px); height: auto; aspect-ratio: 1; margin: 34px 0 0 -14px; object-fit: cover; -webkit-mask-image: radial-gradient(closest-side, #000 78%, transparent 100%); mask-image: radial-gradient(closest-side, #000 78%, transparent 100%); }
 .mailbox-cap { margin: -10px 0 0; font-size: 26px; color: #514944; transform: rotate(-3deg); transform-origin: left; }
 
+/* Terms and Privacy: a reading column of ruled sections. The one that matters most sits in a rose panel, pine edge (gold stays "funded") */
+.legal section { margin: 0 0 clamp(26px, 3vw, 40px); padding: 0 0 clamp(26px, 3vw, 40px); border-bottom: 1px solid var(--rule); }
+.legal section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.legal h2 { font: 300 clamp(25px, 2.2vw, 33px)/1.14 var(--display); letter-spacing: -.016em; color: var(--pine); margin: 0 0 14px; text-wrap: balance; }
+.legal section p:last-child { margin-bottom: 0; }
+.legal section.legal-safe { background: var(--rose); border: 0; border-left: 3px solid var(--pine); padding: clamp(24px, 2.8vw, 38px); }
+.legal-safe .eyebrow { margin-bottom: 10px; }
+.legal-safe h2 { margin-bottom: 16px; }
+.legal-date { margin: 22px 0 0; font-weight: 600; }
+.rl-head .legal-alert { margin: 26px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 16px; line-height: 1.55; color: var(--ink); max-width: 36ch; }
+.legal-alert strong { color: var(--pine); font-weight: 600; }
+.legal a[href^="tel:"] { white-space: nowrap; }
+
 /* the close */
 .cl .stmt { max-width: 18ch; }
 .cl .lede-xl { max-width: 40ch; }

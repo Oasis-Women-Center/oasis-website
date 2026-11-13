@@ -1,0 +1,85 @@
+---
+title: Privacy Policy
+layout: layouts/page.njk
+permalink: /privacy/
+wide: true
+eyebrow: Privacy Policy
+hero_heading: How we treat your information
+hero_accent: your information
+hero_subtext: What this site collects, who sees it, and how we protect the women we serve.
+hero_note: a woman's privacy comes first
+hero_image: /assets/images/photos/living-room-day.webp
+hero_w: 1536
+hero_h: 1024
+hero_alt: A sofa with a sage-green throw, a wooden armchair, and a coffee table with a Bible and a mug beside a sunlit window.
+hero_pos: 40% 50%
+meta_description: How the Oasis Women Center website handles your information, in plain words. What the contact form collects, who sees it, how gifts work on Zeffy, and how we protect women we serve.
+---
+
+{# DRAFT for Keisha and the board to read before it is relied on. Every statement here was checked against
+   the code and the built site (2026-11-13): the contact form posts to Oasis's own workspace account
+   (plan-form.js), no cookies or local storage are used, no analytics (site.gtm_id is empty), no outside
+   scripts, fonts, iframes or embeds, videos are self-hosted, gifts happen on Zeffy's own page, hosting is
+   GitHub Pages. If any of that changes (a tag manager id, an embed, a new form), update this page first. #}
+
+<section class="bd bd-paper legal" aria-labelledby="privacy-h">
+  <div class="bd-in rl">
+    <div class="rl-head" data-rv>
+      <p class="eyebrow">In plain words</p>
+      <h2 class="title" id="privacy-h">What we <em>do</em> with what you send.</h2>
+      <p class="lede">This page covers oasiswomencenter.org. Our <a href="/terms/">Terms of Use</a> cover the rest.</p>
+      <p class="note legal-date">Last updated November 13, 2026</p>
+      <p class="legal-alert" role="note"><strong>In an emergency, call 911.</strong> In emotional crisis, call or text 988. We are not a crisis service.</p>
+    </div>
+
+    <div class="legal ed">
+      <section class="legal-safe" data-rv aria-labelledby="p-safe">
+        <p class="eyebrow">Most important</p>
+        <h2 id="p-safe">Protecting the women we serve</h2>
+        <p>Please do not send private information about another person through this site. That means no medical or treatment records, no Social Security numbers, and no one's story without her say-so.</p>
+        <p>If you want to refer a woman, ask her permission first. Share only what she is comfortable with. We contact a referred woman only after she has agreed.</p>
+        <p>Please do not send sensitive records through our form or by ordinary email. If we need more, we will explain a safe way to send it.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-collect">
+        <h2 id="p-collect">What the contact form collects</h2>
+        <p>Your name, your email, your phone number if you choose to give it, the kind of help you want if you pick one, and your message. When you press send, the form also notes the page you were on, the link that brought you here, and how long the form was open. We use this to answer you, follow up, and catch spam robots.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-see">
+        <h2 id="p-see">Who sees it</h2>
+        <p>Your message goes into Oasis Women Center's own account in a contact tool that our website provider hosts for us. The people at Oasis who answer messages, such as our founder, Keisha Ortiz, can read it. Prefer not to use the form? Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a> or call <a href="tel:{{ site.phone | replace('-', '') }}">{{ site.phone }}</a>.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-sell">
+        <h2 id="p-sell">We do not sell your information</h2>
+        <p>We never share your information, and we do not sell it. The only exception is when the law requires us to.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-place">
+        <h2 id="p-place">Why there is no street address</h2>
+        <p>To protect the women who will live in the home, we keep its location confidential and post no street address on this site. If you need our mailing address for a gift, a legal notice, or paperwork, call or email and we will give it to you directly.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-gifts">
+        <h2 id="p-gifts">Gifts are made on Zeffy</h2>
+        <p>When you click Give, you leave our site and go to Zeffy's own donation page. Zeffy handles your payment and emails your receipt. This site never sees your card number. Zeffy's own terms and privacy policy apply to that page, so please read them there.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-track">
+        <h2 id="p-track">Cookies and tracking</h2>
+        <p>Our pages do not set cookies, and we do not run analytics or ad trackers. Fonts, pictures, and videos load from our own site. Our host, GitHub Pages, may keep basic technical records such as IP addresses. If any of this changes, we will update this page first.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-info">
+        <h2 id="p-info">General information only</h2>
+        <p>This site is not medical, legal, or crisis advice. Oasis is not an emergency service, and we do not read messages around the clock. If you are in danger, call <strong>911</strong>. In emotional crisis, call or text <strong>988</strong>.</p>
+      </section>
+
+      <section data-rv aria-labelledby="p-reach">
+        <h2 id="p-reach">Reach us</h2>
+        <p>Questions about your privacy? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a> or call <a href="tel:{{ site.phone | replace('-', '') }}">{{ site.phone }}</a>. We may update this page, and the date at the top shows the last change.</p>
+      </section>
+    </div>
+  </div>
+</section>
