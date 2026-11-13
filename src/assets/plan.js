@@ -278,6 +278,8 @@
   window.addEventListener("scroll", request, { passive: true });
   window.addEventListener("resize", measure, { passive: true });
   window.addEventListener("load", measure);
+  // a line's "read the whole plan" opening or closing changes the page height below it
+  document.addEventListener("toggle", function (e) { if (e.target.classList && e.target.classList.contains("ln-more")) measure(); }, true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
   measure();
 })();

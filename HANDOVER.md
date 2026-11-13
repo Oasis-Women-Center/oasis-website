@@ -144,9 +144,12 @@ The home page is one house shown two ways on a gold line: a pencil and watercolo
 real home. Scrolling turns the drawing into the home, and every gift fills in a line.
 
 **What Keisha edits, in `/admin/` under Homepage, then "The Plan (every line of the house)":**
-- **Lines**: each piece of the house a donor can fund. Title, text, her handwritten words, a **Price**, and a **Funded**
-  checkbox. Leave Price empty and the page shows "Price being quoted". Never enter a number that is not a real quote.
-  Tick Funded when a line is paid for: it turns gold and the Fund button hides.
+- **Lines**: Keisha's six funding lines (set 2026-11-13 from her giving document). Each has a title, an amount and what it
+  covers, her text (long text opens on "Read more"), suggested gifts, an optional `zeffy_url` (that line's own Zeffy form;
+  empty falls back to Site Settings > Donation Link), and a **Funded** checkbox. "Note under every line" prints under all
+  six. Leave an amount empty and no amount shows; never enter a number that is not hers or a real quote. Tick Funded when
+  a line is paid for: it turns gold and the Fund button hides. A line with no drawing shows a ruled notebook page with
+  the words in "Notebook page heading/lines".
 - **We are here**: the stage name on the gold line, and the "We are here" tick on one of the four phases. Move both as
   Oasis moves forward (for example: the lease signed).
 - **Hero words**, the four phases, and the small print.

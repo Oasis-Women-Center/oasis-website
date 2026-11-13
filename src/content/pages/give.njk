@@ -16,6 +16,7 @@ hero_alt: House keys, a small notebook and a folded blanket on a sunlit table.
 hero_pos: 40% 50%
 meta_description: Support Oasis Women Center. Give financially, donate a vehicle or gift cards, volunteer your skills, or refer a woman who needs housing.
 ---
+{% from "partials/plan-sketch.njk" import sketch %}
 
 <section class="split" aria-labelledby="money-h">
   <div class="col col-ink" data-rv>
@@ -55,11 +56,14 @@ meta_description: Support Oasis Women Center. Give financially, donate a vehicle
       <p class="lede">Every line of the house has a price.</p>
     </div>
     <ul class="strip" data-rv style="--d:.1s">
+      {#- Each one opens that line's own Zeffy form when plan.json has a zeffy_url for it, otherwise the main form. #}
       {%- for ln in plan.lines %}
-      <li>
-        <a href="{{ site.donation_url }}?utm_source=site&amp;utm_medium=give-line&amp;utm_campaign=the-plan&amp;utm_content={{ ln.id }}" target="_blank" rel="noopener">
-          <img src="/assets/images/plan/{{ ln.drawing }}" alt="" width="900" height="900" loading="lazy" decoding="async">
+      <li{% if ln.funded %} class="is-funded"{% endif %}>
+        <a href="{{ ln.zeffy_url or site.donation_url }}?utm_source=site&amp;utm_medium=give-line&amp;utm_campaign=the-plan&amp;utm_content={{ ln.id }}" target="_blank" rel="noopener">
+          <span class="strip-pic">{{ sketch(ln, true) }}</span>
           <span class="hand">{{ ln.words }}</span>
+          <span class="strip-t">{{ ln.title }}</span>
+          <span class="strip-amt">{% if ln.funded %}Funded. Thank you.{% else %}{{ ln.price }}{% endif %}</span>
         </a>
       </li>
       {%- endfor %}

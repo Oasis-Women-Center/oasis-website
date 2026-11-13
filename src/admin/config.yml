@@ -90,6 +90,7 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Text", name: "body", widget: "text"}
               - {label: "We are here", name: "here", widget: "boolean", required: false, hint: "Tick this on the phase Oasis is in right now. Only one."}
+          - {label: "Note under every line", name: "lines_note", widget: "text", required: false, hint: "Shown under each line, for example what happens to gifts above a line's goal."}
           - label: "Lines (each piece of the house a donor can fund)"
             name: "lines"
             widget: "list"
@@ -97,11 +98,29 @@ collections:
               - {label: "Short id (no spaces, used in donation tracking)", name: "id", widget: "string"}
               - {label: "Her words (handwritten under the drawing)", name: "words", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Text", name: "body", widget: "text"}
-              - {label: "Price", name: "price", widget: "string", required: false, hint: "Real quotes only, for example $1,850. Leave empty and the site shows Price being quoted."}
+              - {label: "Second line of the title", name: "subtitle", widget: "string", required: false, hint: "Set in gold italics under the title. Leave empty for none."}
+              - {label: "Amount", name: "price", widget: "string", required: false, hint: "For example $1,500, or a range like $12,500 to $15,000. Leave empty and no amount shows."}
+              - {label: "What the amount covers", name: "price_note", widget: "string", required: false, hint: "A few plain words beside the amount, for example: Per bedroom. The home has four."}
+              - {label: "Text", name: "body", widget: "text", hint: "The first paragraph. Always shown."}
+              - label: "More text (opens on Read more)"
+                name: "more"
+                widget: "list"
+                required: false
+                field: {label: "Paragraph", name: "p", widget: "text"}
+              - {label: "Read more label", name: "more_label", widget: "string", required: false, hint: "For example: Read the whole plan."}
+              - label: "Suggested gifts"
+                name: "levels"
+                widget: "list"
+                required: false
+                field: {label: "Amount", name: "amount", widget: "string"}
+              - {label: "Extra note for this line", name: "after_note", widget: "text", required: false}
+              - {label: "Zeffy form for this line", name: "zeffy_url", widget: "string", required: false, hint: "Paste this line's own Zeffy link. Leave empty and the button uses the main donation link in Site Settings."}
               - {label: "Funded", name: "funded", widget: "boolean", required: false, hint: "Tick when this line is fully paid for. It turns gold and the button hides."}
-              - {label: "Drawing file", name: "drawing", widget: "string"}
-              - {label: "Drawing description", name: "drawing_alt", widget: "string"}
+              - {label: "Drawing file", name: "drawing", widget: "string", required: false, hint: "Leave empty to show a notebook page instead, with the words below."}
+              - {label: "Drawing description", name: "drawing_alt", widget: "string", required: false}
+              - {label: "Notebook page heading (lines with no drawing)", name: "card_title", widget: "string", required: false}
+              - {label: "Notebook page lines (lines with no drawing)", name: "card_lines", widget: "list", required: false, field: {label: "Line", name: "line", widget: "string"}}
+              - {label: "Notebook page lines are a checklist", name: "card_boxes", widget: "boolean", required: false, hint: "Draws an empty box beside each line. The boxes fill gold when the line is funded."}
               - {label: "Photo", name: "photo", widget: "image"}
               - {label: "Photo description", name: "photo_alt", widget: "string"}
 

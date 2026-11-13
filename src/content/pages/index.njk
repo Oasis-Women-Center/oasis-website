@@ -11,6 +11,7 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
    never invent one. The discipleship program she volunteered with is never named (Keisha, 10/25 call). #}
 
 {% set give = site.donation_url %}
+{% from "partials/plan-sketch.njk" import sketch %}
 
 <!-- ============ 0 · HERO: the split ============ -->
 <section class="hero" data-hero aria-labelledby="hero-h">
@@ -113,26 +114,43 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
   <div class="lines-wrap">
   <span class="spine" aria-hidden="true"><i data-spine></i></span>
   <ol class="lines">
+    {#- Each line: her title, her amount, her words, her suggested gifts, her note. The button goes to the line's own
+        Zeffy form when zeffy_url is set in plan.json, otherwise to the main donation form. A line with no price shows
+        no price at all: never print a placeholder. #}
     {%- for ln in plan.lines %}
-    <li class="ln{% if ln.funded %} is-funded{% endif %}" data-ln>
-      <div class="ln-draw">
-        <img src="/assets/images/plan/{{ ln.drawing }}" alt="{{ ln.drawing_alt }}" width="900" height="900" loading="lazy" decoding="async">
+    {%- set lnGive = ln.zeffy_url or give %}
+    <li class="ln{% if ln.funded %} is-funded{% endif %}" id="line-{{ ln.id }}" data-ln>
+      <div class="ln-draw{% if not ln.drawing %} ln-draw-card{% endif %}">
+        {{ sketch(ln) }}
         <span class="hand ln-words">{{ ln.words }}</span>
       </div>
       <div class="ln-body">
         <span class="ln-num">{{ ("0" ~ loop.index) if loop.index < 10 else loop.index }}</span>
-        <h3>{{ ln.title }}</h3>
-        <p>{{ ln.body }}</p>
+        <h3>{{ ln.title }}{% if ln.subtitle %} <span class="ln-sub">{{ ln.subtitle }}</span>{% endif %}</h3>
+        {%- if ln.funded %}
+        <p class="ln-amount is-funded">Funded. Thank you.</p>
+        {%- elif ln.price %}
+        <p class="ln-amount"><strong>{{ ln.price }}</strong>{% if ln.price_note %} <span>{{ ln.price_note }}</span>{% endif %}</p>
+        {%- endif %}
+        <p class="ln-copy">{{ ln.body }}</p>
+        {%- if ln.more and ln.more | length %}
+        <details class="ln-more">
+          <summary><span>{{ ln.more_label or "Read more" }}</span><i class="faq-mark" aria-hidden="true"></i></summary>
+          {%- for m in ln.more %}
+          <p class="ln-copy">{{ m }}</p>
+          {%- endfor %}
+        </details>
+        {%- endif %}
+        {%- if not ln.funded %}
+        {%- if ln.levels and ln.levels | length %}
+        <p class="ln-levels"><span class="ln-levels-k">Suggested gifts</span> {% for lv in ln.levels %}<span class="ln-lv">{{ lv }}</span>{% endfor %}</p>
+        {%- endif %}
         <div class="ln-meta">
-          {% if ln.funded %}
-            <span class="ln-price is-funded">Funded. Thank you.</span>
-          {% elif ln.price %}
-            <span class="ln-price">{{ ln.price }}</span>
-          {% else %}
-            <span class="ln-price is-pending">Price being quoted</span>
-          {% endif %}
-          {% if not ln.funded %}<a class="btn btn-gold btn-sm" href="{{ give }}?utm_source=site&amp;utm_medium=plan-line&amp;utm_campaign=the-plan&amp;utm_content={{ ln.id }}" target="_blank" rel="noopener">Fund this line</a>{% endif %}
+          <a class="btn btn-gold btn-sm" href="{{ lnGive }}?utm_source=site&amp;utm_medium=plan-line&amp;utm_campaign=the-plan&amp;utm_content={{ ln.id }}" target="_blank" rel="noopener" aria-label="Fund this line: {{ ln.title }}">Fund this line</a>
         </div>
+        {%- endif %}
+        {%- if ln.after_note %}<p class="ln-fine">{{ ln.after_note }}</p>{% endif %}
+        {%- if plan.lines_note %}<p class="ln-fine">{{ plan.lines_note }}</p>{% endif %}
       </div>
       <figure class="ln-photo">
         <img src="{{ ln.photo }}" alt="{{ ln.photo_alt }}" width="1536" height="1024" loading="lazy" decoding="async">
@@ -326,7 +344,7 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
       <p class="hand collapse-hand">every line, drawn</p>
       <div class="collapse-sheet" aria-hidden="true">
         {%- for ln in plan.lines %}
-        <figure><img src="/assets/images/plan/{{ ln.drawing }}" alt="" width="900" height="900" loading="lazy" decoding="async"><figcaption>{{ ln.words }}</figcaption></figure>
+        <figure>{{ sketch(ln, true) }}<figcaption>{{ ln.words }}</figcaption></figure>
         {%- endfor %}
       </div>
     </div>

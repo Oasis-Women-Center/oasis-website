@@ -1,0 +1,20 @@
+{#
+  The picture for one line of the plan. Most lines have a pencil and watercolor drawing (src/assets/images/plan/).
+  A line with no drawing (the program, the social worker) gets a page from the planning notebook instead: a ruled
+  card, taped down, with a few words in her handwriting. Same footprint as a drawing, so rows and strips line up.
+  Usage: {% from "partials/plan-sketch.njk" import sketch %}  {{ sketch(ln) }}  or  {{ sketch(ln, true) }} when the
+  picture is decorative (the words sit right beside it).
+#}
+{% macro sketch(ln, decorative=false) -%}
+{%- if ln.drawing -%}
+<img class="sketch-img" src="/assets/images/plan/{{ ln.drawing }}" alt="{{ '' if decorative else ln.drawing_alt }}" width="900" height="900" loading="lazy" decoding="async">
+{%- else -%}
+<span class="sketch-card{% if ln.card_boxes %} sketch-boxes{% endif %}" aria-hidden="true">
+  <span class="sketch-tape"></span>
+  <span class="sketch-page">
+    <span class="sketch-h">{{ ln.card_title or ln.words }}</span>
+    {%- for c in ln.card_lines %}<span class="sketch-li">{{ c }}</span>{% endfor %}
+  </span>
+</span>
+{%- endif -%}
+{%- endmacro %}
