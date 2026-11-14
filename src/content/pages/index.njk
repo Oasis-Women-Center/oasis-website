@@ -240,7 +240,7 @@ meta_description: Oasis Women Center is opening a Christ-centered transitional h
         <span class="ledger-dot" aria-hidden="true"></span>
         <strong>{{ m.title }}</strong>
         <span>{{ m.detail }}</span>
-        <em class="ledger-state">{% if m.state == 'done' %}Done{% elif m.state == 'now' %}Now{% else %}Next{% endif %}</em>
+        <em class="ledger-state">{% if m.state == 'done' %}Done{% elif m.state == 'doing' %}In progress{% elif m.state == 'now' %}Now{% else %}Next{% endif %}</em>
       </li>
       {%- endfor %}
     </ol>

@@ -40,12 +40,17 @@
     {
       "state": "done",
       "title": "Board seated, bylaws adopted",
-      "detail": "Governance and conflict of interest policy in place."
+      "detail": "The people who govern Oasis are in place."
     },
     {
-      "state": "done",
-      "title": "Program designed in full",
-      "detail": "Four pillars, intake criteria, and service plans documented."
+      "state": "doing",
+      "title": "Governance policies",
+      "detail": "The conflict of interest policy and our other policies are being adopted now."
+    },
+    {
+      "state": "doing",
+      "title": "Program being built out",
+      "detail": "Four pillars and intake steps are drawn. The detailed program, with staffing, data, and service steps, is being built now."
     },
     {
       "state": "now",
@@ -63,5 +68,5 @@
       "detail": "First eight residents move in."
     }
   ],
-  "disclosure": "We are pre-house. No woman has moved in yet, and we will not pretend otherwise. What exists today is 501(c)(3) status, a seated board, a program designed in detail, and a community starting to fund it. The house is the next step, and it is the step your gift pays for."
+  "disclosure": "We are pre-house. No woman has moved in yet, and we will not pretend otherwise. What exists today is 501(c)(3) status, a seated board, a program framework whose detail is being built, and a community starting to fund it. The house is the next step, and it is the step your gift pays for."
 }

@@ -355,11 +355,12 @@ figure.note figcaption span { display: block; font-size: 14px; color: var(--mute
 .ledger li:last-child { border-bottom: 1px solid var(--rule); }
 .ledger-dot { grid-row: span 2; width: 14px; height: 14px; border-radius: 50%; margin-top: 5px; border: 2px solid var(--pine); }
 .ledger .is-done .ledger-dot { background: var(--pine); }
+.ledger .is-doing .ledger-dot { border-color: var(--gold); background: linear-gradient(90deg, var(--gold) 50%, transparent 50%); }
 .ledger .is-now .ledger-dot { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 0 5px rgba(217, 153, 59, .22); }
 .ledger strong { font: 600 16px/1.35 var(--sans); color: var(--pine); }
 .ledger li > span:not(.ledger-dot) { grid-column: 2; font-size: 15px; color: var(--muted); }
 .ledger-state { grid-column: 3; grid-row: 1; font: 600 11px/1.6 var(--sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.ledger .is-now .ledger-state { color: var(--gold-deep); }
+.ledger .is-now .ledger-state, .ledger .is-doing .ledger-state { color: var(--gold-deep); }
 .ways { margin: 6px 0 30px; padding: 0 0 0 20px; }
 .ways li { margin-bottom: 14px; padding-left: 4px; color: var(--ink); }
 .ways li::marker { color: var(--gold-deep); }
