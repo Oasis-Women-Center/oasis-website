@@ -63,7 +63,7 @@ values in templates.
 | `--gold-deep` | `#9C6618` | gold text where contrast matters |
 | `--gold-light` | `#F5C877` | gold on dark bands |
 
-Type: Newsreader (headlines), Figtree (body), Covered By Your Grace (her handwriting), all via Google Fonts.
+Type: Newsreader (headlines), Figtree (body), Covered By Your Grace (her handwriting). All four files are self-hosted in `src/assets/fonts/` and declared in `src/assets/plan.css`; the pages load nothing from Google Fonts (the Privacy page says so). `src/_includes/layouts/base.njk` still has a Google Fonts link, but no live page uses that layout (only `home.njk` extends it); remove the link before anyone starts using it.
 
 ## Logo files
 
